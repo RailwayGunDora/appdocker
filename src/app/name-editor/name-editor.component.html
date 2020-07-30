@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="form-group">
+    <p class="h4 mb-4">Sign up</p>
+    <ng-container *ngIf="show">
+    <div class="form-row mb-4 firstname">
+
+      <!-- First name -->
+      <div class="col">
+        <input [formControl]="firstName" type="text" id="defaultRegisterFormFirstName Name" class="form-control " placeholder="what is your name" required>
+        <div class="form-group">
+          <button (click)="toggle()" id="bt" class="btn btn-outline-primary btn-sm">save</button>
+          <p>
+            Value:{{firstName.value}}
+          </p>
+        </div>
+      </div>
+
+
+    </div>
+</ng-container>
+<ng-container *ngIf="showmail">
+    <!-- E-mail -->
+
+    <div class="mail">
+      <input [formControl]="email" type="email" id="defaultRegisterFormEmail Mail" class="form-control mb-4 mail" placeholder="what is your E-mail">
+      <div class="form-group">
+        <button (click)="toggleEmail()" id="Mail" class="btn btn-outline-primary btn-sm">Save</button>
+        <p>
+          Value:{{email.value}}
+        </p>
+      </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="showmobile">
+    <!-- Phone number -->
+    <div class="phonenumber">
+      <input [formControl]="mobile" minLength="10" type="tel" id="defaultRegisterPhonePassword Mobile" class="form-control" placeholder="What is your mobile number " aria-describedby="defaultRegisterFormPhoneHelpBlock">
+      <div class="form-group">
+        <button (click)="toggleNumber()" id="updateMobile Mobile" class="btn btn-outline-primary btn-sm">Save</button>
+        <p>
+          Value:{{mobile.value}}
+        </p>
+      </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="showstart">
+    <button (click)="toggleProfile()" class="btn btn-md btn-outline-warning start-again" type="submit">Start Again</button>
+</ng-container>
+  </div>
+
+</div>
