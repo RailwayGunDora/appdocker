@@ -21,7 +21,7 @@ const User = mongoose.model('Fruit', userSchema);
 app.post('/src/app', function(req, res){
   const { firstName, email, mobile } = req.body;
   // storedata on database
-  User.findOne({ firstName, email, mobile }, function (err, users){
+  User.insertOne({ firstName, email, mobile }, function (err, users){
   users.save();
     }
   });
